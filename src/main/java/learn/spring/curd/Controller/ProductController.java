@@ -11,8 +11,12 @@ import java.util.List;
 @RequestMapping("/product")
 public class ProductController {
 
-    @Autowired
     ProductService service;
+
+    public ProductController(ProductService service) {
+        this.service = service;
+    }
+
 
     @GetMapping("/listall")
     public List<ProductEntity> listAll(){
